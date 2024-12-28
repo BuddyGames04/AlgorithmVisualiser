@@ -1,0 +1,42 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAC Algorithmic Visualizer</title>
+    <style>
+        body { text-align: center; margin: 0; padding: 0; }
+        canvas { display: block; margin: 0 auto; border: 1px solid #ccc; }
+    </style>
+    <script src="javascript/app.js" type="module"></script>
+</head>
+<body>
+    <div id="controls">
+        <h1 id="algorithm-title"></h1>
+        <input id="array-input" type="text" placeholder="Enter numbers separated by commas (e.g., 1,2,3,4)" />
+        <button onclick="startWithInput()">Set Custom Array</button>
+        <button onclick="startDefault()">Use Default Array</button>
+    </div>
+    <canvas id="visualizer" width="800" height="400"></canvas>
+    <div id="code-view">
+        <select id="language" onchange="switchCodeLanguage()">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="cpp">C++</option>
+        </select>
+        <pre id="code-container">
+            <code class="javascript">
+                <span class="line-1">function runningTotal(array) {</span>
+                <span class="line-2">  let sum = 0;</span>
+                <span class="line-3">  for (let i = 0; i < array.length; i++) {</span>
+                <span class="line-4">    sum += array[i];</span>
+                <span class="line-5">    runningTotals.push(sum);</span>
+                <span class="line-6">  }</span>
+                <span class="line-7">  return runningTotals;</span>
+                <span class="line-8">}</span>
+            </code>
+        </pre>
+    </div>
+    </body>
+    </html>
